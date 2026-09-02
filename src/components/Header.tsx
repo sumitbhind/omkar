@@ -31,7 +31,15 @@ export default function Header({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const schneiderLinks = categories.map((c) => ({ name: c.name, href: `/${c.slug}` }));
+  const productLinks = [
+    { name: "Cello Tape", href: "/cello-tape" },
+    { name: "Printed Tape", href: "/printed-tape" },
+    { name: "Stretch Film", href: "/stretch-film" },
+    { name: "Bubble Roll", href: "/bubble-roll" },
+    { name: "Paper Roll", href: "/paper-roll" },
+    { name: "Corrugated Sheets", href: "/corrugated-sheets" },
+    { name: "Corrugated Boxes", href: "/corrugated-boxes" },
+  ];
   const panelBuilderLinks = panelSections.map((s) => ({ name: s.name, href: `/${s.slug}` }));
 
   const toggleSubmenu = (menu: string) => {
@@ -99,19 +107,19 @@ export default function Header({
               </div>
             </div>
 
-            {/* Schneider Dropdown */}
+            {/* Product Dropdown */}
             <div className="relative group">
               <button className="flex items-center text-[#f26b31] font-medium text-[18px] px-5 py-[30px] transition-colors duration-200 hover:text-[#f26b31] focus:outline-none cursor-pointer">
-                <span>Schneider</span>
+                <span>Products</span>
                 <ChevronRight className="ml-1 h-[15px] w-[15px] p-0.5 text-[#f26b31] transition-transform duration-200 transform group-hover:rotate-90" />
               </button>
-              <div className="absolute left-0 top-full w-[240px] bg-black/45 backdrop-blur-[15px] -webkit-backdrop-blur-[10px] rounded-lg border border-white/15 shadow-[0_0_5px_rgba(0,0,0,0.1)] opacity-0 invisible translate-y-5 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 py-0 overflow-hidden">
+              <div className="absolute left-0 top-full w-[240px] bg-white/10 backdrop-blur-xl -webkit-backdrop-blur-xl rounded-lg border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] opacity-0 invisible translate-y-5 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 py-0 overflow-hidden">
                 <div className="flex flex-col">
-                  {schneiderLinks.map((item, idx) => (
+                  {productLinks.map((item, idx) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`block px-[15px] py-[9px] text-[14px] text-white hover:bg-[#f26b31] transition-all duration-200 ${idx < schneiderLinks.length - 1 ? "border-b border-[#464646]" : ""
+                      className={`block px-[15px] py-[10px] text-[15px] text-black hover:text-white font-medium hover:bg-[#f26b31] transition-all duration-200 ${idx < productLinks.length - 1 ? "border-b border-white/20" : ""
                         }`}
                     >
                       {item.name}
@@ -121,27 +129,7 @@ export default function Header({
               </div>
             </div>
 
-            {/* Panel Builder Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center text-[#f26b31] font-medium text-[18px] px-5 py-[30px] transition-colors duration-200 hover:text-[#f26b31] focus:outline-none cursor-pointer">
-                <span>Panel Builder</span>
-                <ChevronRight className="ml-1 h-[15px] w-[15px] p-0.5 text-[#f26b31] transition-transform duration-200 transform group-hover:rotate-90" />
-              </button>
-              <div className="absolute left-0 top-full w-[240px] bg-black/45 backdrop-blur-[15px] -webkit-backdrop-blur-[10px] rounded-lg border border-white/15 shadow-[0_0_5px_rgba(0,0,0,0.1)] opacity-0 invisible translate-y-5 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 py-0 overflow-hidden">
-                <div className="flex flex-col">
-                  {panelBuilderLinks.map((item, idx) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className={`block px-[15px] py-[9px] text-[14px] text-white hover:bg-[#f26b31] transition-all duration-200 ${idx < panelBuilderLinks.length - 1 ? "border-b border-[#464646]" : ""
-                        }`}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+
 
             <Link
               href="/pricelist"
@@ -211,25 +199,25 @@ export default function Header({
               )}
             </div>
 
-            {/* Schneider Dropdown (Mobile) */}
+            {/* Product Dropdown (Mobile) */}
             <div className="border-b border-white/10">
               <button
-                onClick={() => toggleSubmenu("schneider")}
+                onClick={() => toggleSubmenu("products")}
                 className="w-full flex justify-between items-center px-5 py-4 text-[14px] font-semibold text-white hover:bg-white/10 transition-colors uppercase cursor-pointer"
               >
-                <span>Schneider</span>
+                <span>Products</span>
                 <ChevronDown
-                  className={`h-4 w-4 transform transition-transform duration-200 ${activeSubmenu === "schneider" ? "rotate-180" : ""
+                  className={`h-4 w-4 transform transition-transform duration-200 ${activeSubmenu === "products" ? "rotate-180" : ""
                     }`}
                 />
               </button>
-              {activeSubmenu === "schneider" && (
-                <div className="bg-[#111111]/80 backdrop-blur-md pl-5 py-1">
-                  {schneiderLinks.map((item) => (
+              {activeSubmenu === "products" && (
+                <div className="bg-white/10 backdrop-blur-xl border-y border-white/20 pl-5 py-1">
+                  {productLinks.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block px-5 py-3 text-xs text-white/80 hover:text-white hover:bg-white/10 uppercase transition-colors"
+                      className="block px-5 py-3 text-xs text-white hover:bg-[#f26b31] uppercase transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -239,33 +227,7 @@ export default function Header({
               )}
             </div>
 
-            {/* Panel Builder Dropdown (Mobile) */}
-            <div className="border-b border-white/10">
-              <button
-                onClick={() => toggleSubmenu("panelBuilder")}
-                className="w-full flex justify-between items-center px-5 py-4 text-[14px] font-semibold text-white hover:bg-white/10 transition-colors uppercase cursor-pointer"
-              >
-                <span>Panel Builder</span>
-                <ChevronDown
-                  className={`h-4 w-4 transform transition-transform duration-200 ${activeSubmenu === "panelBuilder" ? "rotate-180" : ""
-                    }`}
-                />
-              </button>
-              {activeSubmenu === "panelBuilder" && (
-                <div className="bg-[#111111]/80 backdrop-blur-md pl-5 py-1">
-                  {panelBuilderLinks.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="block px-5 py-3 text-xs text-white/80 hover:text-white hover:bg-white/10 uppercase transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+
 
             <Link
               href="/pricelist"

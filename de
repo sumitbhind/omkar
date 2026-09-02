@@ -1,0 +1,29 @@
+[33mcommit c7b1248190a77a011d793a9ce1c0ce3944282578[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: sumitbhind <sumitsharmabhind786@gmail.com>
+Date:   Tue Aug 25 12:09:24 2026 +0530
+
+    feat: add BlogPostsView component and update Next.js type reference path
+
+[33mcommit 23d9caa4c9bc79fbd371d7992f13cf96675c7390[m
+Author: sumitbhind <sumitsharmabhind786@gmail.com>
+Date:   Tue Aug 25 12:00:09 2026 +0530
+
+    chore: update lockfile dependencies for frontend project
+
+[33mcommit 666681d63c6bb8e32878c23e8c606bc16446a51c[m
+Author: sumitbhind <sumitsharmabhind786@gmail.com>
+Date:   Tue Aug 25 11:55:55 2026 +0530
+
+    Restore accidentally deleted files
+
+[33mcommit 4caece55759eb4d19bb9cb3fb4572227a7f0dd65[m
+Author: sumitbhind <sumitsharmabhind786@gmail.com>
+Date:   Tue Aug 25 11:41:35 2026 +0530
+
+    second
+
+[33mcommit 1d76d9e0dfcde751e457f195264ffa5751c2f1f4[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: sumitbhind <sumitsharmabhind786@gmail.com>
+Date:   Tue Aug 25 11:15:42 2026 +0530
+
+    new

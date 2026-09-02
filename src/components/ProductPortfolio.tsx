@@ -7,20 +7,13 @@ import {
   ShieldCheck, Settings, Network, LineChart, Factory, Home, Package, Box, Layers, Archive
 } from "lucide-react";
 
+import Image from "next/image";
+import { staticProducts } from "@/data/products";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
 interface Category { _id: string; name: string; slug: string; description: string }
-
-const ICON_MAP: Record<string, React.ElementType> = {
-  "cello-tape":              Package,
-  "printed-tape":            Package,
-  "stretch-film":            Layers,
-  "bubble-roll":             Package,
-  "paper-roll":              Layers,
-  "corrugated-sheets":       Layers,
-  "corrugated-boxes":        Archive,
-};
 
 export default function ProductPortfolio({ categories }: { categories: Category[] }) {
   return (
@@ -56,14 +49,20 @@ export default function ProductPortfolio({ categories }: { categories: Category[
               className="w-full"
             >
               {categories.map((cat) => {
-                const IconComponent = ICON_MAP[cat.slug] ?? Package;
+                const banner = staticProducts[cat.slug]?.bannerImage || "/images/omt-about-new.jpg";
                 return (
                   <SwiperSlide key={cat._id} className="h-auto">
-                    <div className="h-full flex flex-col justify-between items-center text-center bg-white p-8 rounded-[10px] border border-gray-100 shadow-[0_10px_25px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:border-b-4 hover:border-b-[#f26b31] transition-all duration-300 ease-in-out group min-h-[420px]">
-
+                    <div className="h-full flex flex-col justify-between items-center text-center bg-white p-6 rounded-[10px] border border-gray-100 shadow-[0_10px_25px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.15)] hover:-translate-y-2 hover:border-b-4 hover:border-b-[#f26b31] transition-all duration-300 ease-in-out group min-h-[420px]">
+                      
                       <div className="flex flex-col items-center w-full">
-                        <div className="w-14 h-14 bg-brand-dark rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-white group-hover:scale-110 group-hover:shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]">
-                          <IconComponent className="h-6 w-6 text-white transition-colors duration-300 group-hover:text-[#f26b31]" />
+                        <div className="w-full aspect-[4/3] rounded-lg overflow-hidden mb-6 relative group-hover:shadow-md transition-all duration-300">
+                          <Image
+                            src={banner}
+                            alt={cat.name}
+                            fill
+                            className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          />
                         </div>
 
                         <h4 className="text-xl font-bold text-[#f26b31] group-hover:text-black mb-4 min-h-[55px] flex items-center justify-center transition-colors duration-300">

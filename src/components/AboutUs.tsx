@@ -11,7 +11,7 @@ const DEFAULTS = {
   heroSubtitle: "Trusted Packaging Material Manufacturer & Supplier in Gwalior Since 2000",
   intro: "Omkar MFG Traders is a trusted Packaging Material Manufacturer & Supplier in Gwalior since 2000. We offer premium-quality Cello Tapes, Printed Tapes, Stretch Films, Bubble Rolls, Carry Bags, Paper Rolls, and other packaging materials at competitive prices.",
   description: "Our commitment to quality and timely delivery makes us a reliable packaging partner for businesses across India.",
-  image: "/images/omt-about.jpg",
+  image: "/images/omt-about-new.jpg",
 };
 
 export default function AboutUs({ initialData }: { initialData?: Partial<typeof DEFAULTS> }) {

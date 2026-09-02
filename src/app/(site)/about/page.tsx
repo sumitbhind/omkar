@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Check } from "lucide-react";
 import EnquiryBanner from "@/components/EnquiryBanner";
 
@@ -12,7 +12,7 @@ const DEFAULTS = {
   description: "We manufacture and supply a wide range of packaging products, including Cello Tapes, Printed Tapes, Brown Tapes, Masking Tapes, Double Sided Tapes, Electrical Tapes, Stretch Films, Bubble Rolls, Paper Rolls, Carry Bags, and other packaging materials. Every product is made using premium-quality raw materials to ensure strong adhesion, durability, and reliable performance.\n\nAt Omkar MFG Traders, we combine modern manufacturing techniques with strict quality standards to deliver packaging products that meet the needs of industries, retailers, wholesalers, logistics companies, e-commerce businesses, and commercial organizations. Our focus on quality, competitive pricing, and on-time delivery has helped us build long-term relationships with customers across India.\n\nWe believe that good packaging not only protects products but also creates a strong brand impression. Our goal is to provide reliable, affordable, and customized packaging solutions that add value to every business we serve.",
   vision:      "",
   mission:     "Established in 2000 with 25+ years of industry experience\nTrusted Manufacturer & Supplier of Packaging Materials\nWide Range of High-Quality Packaging Products\nPremium Raw Materials for Better Strength & Performance\nCompetitive Prices with Bulk Order Support\nCustomized Printed Tape & Packaging Solutions\nStrict Quality Control at Every Stage\nFast & On-Time Delivery Across India\nDedicated Customer Support & Quick Response\nTrusted by Businesses Across Multiple Industries",
-  image:       "/images/omt-about.jpg",
+  image:       "/images/omt-about-new.jpg",
   stats:       [] as { label: string; value: string }[],
   industries:  [
     "E-commerce & Retail",
